@@ -4,6 +4,8 @@ module.exports = exports = (app) ->
     # sample data https://gist.github.com/3496677
     { repository: {name, url}, after } = {}
 
+    after = after[0...7]
+
     require('./deploy_queue')(name, url, after)
 
     res.send('ok')
