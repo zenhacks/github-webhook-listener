@@ -2,7 +2,7 @@ spawn = require('child_process').spawn
 
 module.exports = exports = (name, url, after) ->
 
-  process.env.REPO_COMMIT = aftr
+  process.env.REPO_COMMIT = after
   # deploy = spawn('ls', ['-lh', '/usr'])
   deploy = spawn 'ls', ['-al']
 
