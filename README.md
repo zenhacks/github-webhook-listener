@@ -1,10 +1,19 @@
 ## README
-This is a listener for web hook from github.com
+This is a listener for receving signals sent by github.com through web hook. It mainly:
+- listening for `POST` request from github at port 3000
+- parse the JSON and fetch the information about the
+  * repository name
+  * repository url
+  * the commit after push
+- pass the above information through environment variable `REPO_COMMIT`
+- sprawn an process for deployment
 
 ## Start the server
-`npm install forever -g`
+`node server.js`
 
-To use `forever` in daemon
+or use `forever` to guard the server daemon
+
+`npm install forever -g`
 
 `forever start -forever.log -o out.log -e err.log server.js`
 
@@ -13,7 +22,7 @@ To use `forever` in daemon
 `REPO_COMMIT`: the first 7 digitals for this commit to be deployed.
 
 ## Reminder
-Remember to open the port 3000 for hosts 207.97.227.253, 50.57.128.197, 108.171.174.178.
+Need to open the port 3000 for hosts 207.97.227.253, 50.57.128.197, 108.171.174.178.
 
 In `shorewall` add this line:
 
