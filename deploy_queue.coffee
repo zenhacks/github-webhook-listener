@@ -1,15 +1,19 @@
 spawn = require('child_process').spawn
 
-module.exports = exports = (name, url, commit) ->
-  process.env.REPO_COMMIT = commit
-  deploy = spawn 'grep', ['ssh']
+module.exports = exports = (name, url, after) ->
+
+  process.env.REPO_COMMIT = aftr
+  # deploy = spawn('ls', ['-lh', '/usr'])
+  deploy = spawn 'ls', ['-al']
 
   deploy.stdout.on 'data', (data) ->
-    console.log data
+    console.log "running #{data}"
 
   deploy.stderr.on 'data', (data) ->
-    console.log "Deploy error:#{data}"
+    console.log "Deploy error: #{data}"
 
   deploy.on 'exit', (code) ->
     unless code is 0
-      console.log "Deploy failed with code #{code}"
+      console.log "Deploy failed with code #{code}."
+    else
+      console.log "Deploy successful."
