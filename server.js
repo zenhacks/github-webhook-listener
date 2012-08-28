@@ -1,16 +1,14 @@
 /**
  * Global Module dependencies.
  */
+require('coffee-script');
 
 var express = require('express');
 var app = module.exports = express();
 app.use(express.bodyParser());
 
-app.post('/', function (req, res) {
-  console.log(req.body);
-  res.send('Ok');
-})
+require('./listener')(app);
 
 app.listen(3000, function(){
-  console.log("Express server listening on port 3000" );
+  console.log("The github server listening on port 3000" );
 });
