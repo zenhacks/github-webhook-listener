@@ -8,8 +8,10 @@ This is a listener for receving signals sent by github.com through web hook. It 
 - pass the above information through environment variable `REPO_COMMIT`
 - sprawn an process for deployment
 
-## Start the server
-`node server.js`
+## Usage
+`npm install` to install dependencies
+ 
+`node server.js` to start the server
 
 or use `forever` to guard the server daemon
 
