@@ -2,9 +2,10 @@ spawn = require('child_process').spawn
 
 module.exports = exports = (name, url, after) ->
 
+  process.env.DEPLOY_SCRIPT = '/home/deploy/bin/deploy.sh'
   process.env.REPO_COMMIT = after
   # deploy = spawn('ls', ['-lh', '/usr'])
-  deploy = spawn 'ls', ['-al']
+  deploy = spawn '/home/deploy/bin/deploy'
 
   deploy.stdout.on 'data', (data) ->
     console.log "running #{data}"
