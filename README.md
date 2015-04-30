@@ -6,7 +6,7 @@ This is a listener for receving signals sent by github.com through web hook. It 
   * repository url
   * the commit after push
 - pass the above information through environment variable `REPO_COMMIT`
-- sprawn an process for deployment
+- spawn a process for deployment
 
 ## Usage
 `npm install` to install dependencies
