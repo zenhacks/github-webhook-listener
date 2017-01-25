@@ -5,7 +5,7 @@ module.exports = exports = (name, url, after) ->
   process.env.DEPLOY_SCRIPT = '/home/deploy/bin/deploy.sh'
   process.env.REPO_COMMIT = after
   # deploy = spawn('ls', ['-lh', '/usr'])
-  deploy = spawn '/home/deploy/bin/deploy'
+  deploy = spawn process.env.DEPLOY_SCRIPT
 
   deploy.stdout.on 'data', (data) ->
     console.log "running #{data}"
